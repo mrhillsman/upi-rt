@@ -38,10 +38,10 @@ resource "matchbox_group" "default" {
 
 resource "matchbox_profile" "worker" {
   name   = "${var.cluster_id}-worker"
-  kernel = "${var.worker_kernel}"
+  kernel = "${local.pxe_kernel}"
 
   initrd = [
-    "${var.worker_initrd}",
+    "${local.pxe_initrd}",
   ]
 
   args = flatten([
