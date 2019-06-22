@@ -8,7 +8,14 @@ locals {
     "rd.neednet=1",
 
     # "rd.break=initqueue"
+    "coreos.inst=yes",
+
+    "coreos.inst.image_url=${var.pxe_os_image_url}",
+    "coreos.inst.install_dev=sda",
   ]
+
+  pxe_kernel = "${var.pxe_kernel_url}"
+  pxe_initrd = "${var.pxe_initrd_url}"
 
   worker_public_ipv4 = "${var.worker_public_ipv4}"
 }
