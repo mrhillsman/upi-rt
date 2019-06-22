@@ -69,3 +69,8 @@ variable "worker_ipmi_user" {
 variable "worker_ipmi_pass" {
   type = "string"
 }
+
+variable "worker_count" {
+  type    = "string"
+  default = "1"
+}
