@@ -42,13 +42,19 @@ variable "worker_mac_address" {
   type = "string"
 }
 
-variable "worker_kernel" {
+variable "pxe_os_image_url" {
   type = "string"
 }
-variable "worker_initrd" {
+
+variable "pxe_kernel_url" {
   type = "string"
 }
-variable "worker_kickstart" {
+
+variable "pxe_initrd_url" {
+  type = "string"
+}
+
+variable "worker_ign_file" {
   type = "string"
 }
 
