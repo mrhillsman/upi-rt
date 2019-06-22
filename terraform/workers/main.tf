@@ -46,10 +46,12 @@ resource "matchbox_profile" "worker" {
 
   args = flatten([
     "${local.kernel_args}",
-    "inst.ks=${var.worker_kickstart}",
+    "coreos.inst.ignition_url=${var.matchbox_http_endpoint}/ignition?mac=${var.worker_mac_address}",
   ])
 
+  raw_ignition = "${file(var.worker_ign_file)}"
 }
+
 
 resource "matchbox_group" "worker" {
   name    = "${var.cluster_id}-worker"
