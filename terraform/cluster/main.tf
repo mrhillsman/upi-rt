@@ -11,7 +11,7 @@ locals {
     "coreos.inst=yes",
 
     "coreos.inst.image_url=${var.pxe_os_image_url}",
-    "coreos.inst.install_dev=sda",
+    "coreos.inst.install_dev=vda",
   ]
 
   pxe_kernel = "${var.pxe_kernel_url}"
