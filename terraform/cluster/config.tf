@@ -42,6 +42,10 @@ variable "master_ipmi_host" {
   type = "string"
 }
 
+variable "master_ipmi_port" {
+  type = "string"
+}
+
 variable "master_ipmi_user" {
   type = "string"
 }
@@ -51,6 +55,10 @@ variable "master_ipmi_pass" {
 }
 
 variable "bootstrap_ipmi_host" {
+  type = "string"
+}
+
+variable "bootstrap_ipmi_port" {
   type = "string"
 }
 
