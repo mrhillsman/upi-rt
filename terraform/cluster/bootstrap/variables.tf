@@ -30,6 +30,10 @@ variable "bootstrap_ipmi_host" {
   type = "string"
 }
 
+variable "bootstrap_ipmi_port" {
+  type = "string"
+}
+
 variable "bootstrap_ipmi_user" {
   type = "string"
 }
