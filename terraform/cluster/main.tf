@@ -76,6 +76,7 @@ module "bootstrap" {
   ignition_config_content = "${file(var.bootstrap_ign_file)}"
 
   bootstrap_ipmi_host     = "${var.bootstrap_ipmi_host}"
+  bootstrap_ipmi_port     = "${var.bootstrap_ipmi_port}"
   bootstrap_ipmi_user     = "${var.bootstrap_ipmi_user}"
   bootstrap_ipmi_pass     = "${var.bootstrap_ipmi_pass}"
 
