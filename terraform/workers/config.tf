@@ -62,6 +62,10 @@ variable "worker_ipmi_host" {
   type = "string"
 }
 
+variable "worker_ipmi_port" {
+  type = "string"
+}
+
 variable "worker_ipmi_user" {
   type = "string"
 }
