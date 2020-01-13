@@ -8,6 +8,17 @@ variable "cluster_domain" {
   type = "string"
 }
 
+variable "pxe_initrd_url" {
+  type = "string"
+}
+
+variable "pxe_kernel_url" {
+  type = "string"
+}
+
+variable "pxe_os_image_url" {
+  type = "string"
+}
 
 # ================MATCHBOX=====================
 
@@ -34,47 +45,13 @@ variable "matchbox_client_key" {
   default = "matchbox/tls/client.key"
 }
 
-variable "worker_public_ipv4" {
-  type = "string"
-}
-
-variable "worker_mac_address" {
-  type = "string"
-}
-
-variable "pxe_os_image_url" {
-  type = "string"
-}
-
-variable "pxe_kernel_url" {
-  type = "string"
-}
-
-variable "pxe_initrd_url" {
-  type = "string"
-}
-
-variable "worker_ign_file" {
-  type = "string"
-}
-
-variable "worker_ipmi_host" {
-  type = "string"
-}
-
-variable "worker_ipmi_port" {
-  type = "string"
-}
-
-variable "worker_ipmi_user" {
-  type = "string"
-}
-
-variable "worker_ipmi_pass" {
-  type = "string"
-}
+# ==============WORKERS=======================
 
 variable "worker_count" {
   type    = "string"
   default = "1"
+}
+
+variable "worker_nodes" {
+  type = list(map(string))
 }
