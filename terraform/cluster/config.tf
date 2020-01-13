@@ -8,67 +8,18 @@ variable "cluster_domain" {
   type = "string"
 }
 
-variable "bootstrap_ign_file" {
+variable "pxe_os_image_url" {
   type = "string"
 }
 
-variable "master_ign_file" {
+variable "pxe_kernel_url" {
   type = "string"
 }
 
-variable "master_count" {
-  type    = "string"
-  default = "1"
-}
-
-variable "master_public_ipv4" {
-  type = "string"
-
-}
-
-variable "bootstrap_public_ipv4" {
+variable "pxe_initrd_url" {
   type = "string"
 }
 
-variable "bootstrap_mac_address" {
-  type = "string"
-}
-
-variable "master_mac_address" {
-  type = "string"
-}
-
-variable "master_ipmi_host" {
-  type = "string"
-}
-
-variable "master_ipmi_port" {
-  type = "string"
-}
-
-variable "master_ipmi_user" {
-  type = "string"
-}
-
-variable "master_ipmi_pass" {
-  type = "string"
-}
-
-variable "bootstrap_ipmi_host" {
-  type = "string"
-}
-
-variable "bootstrap_ipmi_port" {
-  type = "string"
-}
-
-variable "bootstrap_ipmi_user" {
-  type = "string"
-}
-
-variable "bootstrap_ipmi_pass" {
-  type = "string"
-}
 # ================MATCHBOX=====================
 
 variable "matchbox_rpc_endpoint" {
@@ -95,16 +46,43 @@ variable "matchbox_client_key" {
   default = "matchbox/tls/client.key"
 }
 
-variable "pxe_os_image_url" {
+# ================BOOTSTRAP==================
+
+variable "bootstrap_ign_file" {
   type = "string"
 }
 
-variable "pxe_kernel_url" {
+variable "bootstrap_public_ipv4" {
   type = "string"
 }
 
-variable "pxe_initrd_url" {
+variable "bootstrap_mac_address" {
   type = "string"
 }
 
+variable "bootstrap_ipmi_host" {
+  type = "string"
+}
 
+variable "bootstrap_ipmi_port" {
+  type = "string"
+}
+
+variable "bootstrap_ipmi_user" {
+  type = "string"
+}
+
+variable "bootstrap_ipmi_pass" {
+  type = "string"
+}
+
+# ================MASTER=====================
+
+variable "master_count" {
+  type    = "string"
+  default = "1"
+}
+
+variable "master_nodes" {
+  type = list(map(string))
+}
