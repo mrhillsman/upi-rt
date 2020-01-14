@@ -17,7 +17,7 @@ locals {
   pxe_kernel = "${var.pxe_kernel_url}"
   pxe_initrd = "${var.pxe_initrd_url}"
 
-  worker_public_ipv4 = "${var.worker_public_ipv4}"
+  #worker_public_ipv4 = "${var.worker_public_ipv4}"
 }
 
 provider "matchbox" {
@@ -37,7 +37,8 @@ resource "matchbox_group" "default" {
 }
 
 resource "matchbox_profile" "worker" {
-  name   = "${var.cluster_id}-worker"
+  count = var.worker_count
+  name   = "${var.cluster_id}-${var.worker_nodes[count.index]["name"]}"
   kernel = "${local.pxe_kernel}"
 
   initrd = [
@@ -46,20 +47,19 @@ resource "matchbox_profile" "worker" {
 
   args = flatten([
     "${local.kernel_args}",
-    "coreos.inst.ignition_url=${var.matchbox_http_endpoint}/ignition?mac=${var.worker_mac_address}",
+    "coreos.inst.ignition_url=${var.matchbox_http_endpoint}/ignition?mac=${var.worker_nodes[count.index]["worker_mac_address"]}",
   ])
 
-  raw_ignition = "${file(var.worker_ign_file)}"
+  raw_ignition = "${file(var.worker_nodes[count.index]["worker_ign_file"])}"
 }
 
 
 resource "matchbox_group" "worker" {
-  name    = "${var.cluster_id}-worker"
-  profile = "${matchbox_profile.worker.name}"
+  count = var.worker_count
+  name   = var.worker_nodes[count.index]["name"]
+  profile = "${var.cluster_id}-${var.worker_nodes[count.index]["name"]}"
 
   selector = {
-    mac = "${var.worker_mac_address}"
+    mac = "${var.worker_nodes[count.index]["worker_mac_address"]}"
   }
 }
-
-
