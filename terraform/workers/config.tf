@@ -8,7 +8,7 @@ variable "cluster_domain" {
   type = "string"
 }
 
-variable "pxe_initrd_url" {
+variable "pxe_os_image_url" {
   type = "string"
 }
 
@@ -16,7 +16,7 @@ variable "pxe_kernel_url" {
   type = "string"
 }
 
-variable "pxe_os_image_url" {
+variable "pxe_initrd_url" {
   type = "string"
 }
 
@@ -45,7 +45,7 @@ variable "matchbox_client_key" {
   default = "matchbox/tls/client.key"
 }
 
-# ==============WORKERS=======================
+# ================WORKERS======================
 
 variable "worker_count" {
   type    = "string"
