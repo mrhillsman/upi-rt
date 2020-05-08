@@ -1,30 +1,30 @@
 variable "pxe_kernel" {
-  type = "string"
+  type = string
 }
 
 variable "pxe_initrd" {
-  type = "string"
+  type = string
 }
 
 variable "pxe_kernel_args" {
-  type = "list"
+  type = list
 }
 
 variable "matchbox_http_endpoint" {
-  type = "string"
+  type = string
 }
 
 variable "cluster_id" {
-  type = "string"
+  type = string
 }
 
 variable "master_count" {
-  type    = "string"
+  type    = string
   default = "1"
 }
 
 variable "ignition_config_content" {
-    type = "string"
+    type = string
 }
 
 variable "master_nodes" {

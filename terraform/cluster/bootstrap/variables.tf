@@ -1,43 +1,43 @@
 variable "pxe_kernel" {
-  type = "string"
+  type = string
 }
 
 variable "pxe_initrd" {
-  type = "string"
+  type = string
 }
 
 variable "pxe_kernel_args" {
-  type = "list"
+  type = list
 }
 
 variable "matchbox_http_endpoint" {
-  type = "string"
+  type = string
 }
 
 variable "cluster_id" {
-  type = "string"
+  type = string
 }
 
 variable "ignition_config_content" {
-  type = "string"
+  type = string
 }
 
 variable "bootstrap_mac_address" {
-  type = "string"
+  type = string
 }
 
 variable "bootstrap_ipmi_host" {
-  type = "string"
+  type = string
 }
 
 variable "bootstrap_ipmi_port" {
-  type = "string"
+  type = string
 }
 
 variable "bootstrap_ipmi_user" {
-  type = "string"
+  type = string
 }
 
 variable "bootstrap_ipmi_pass" {
-  type = "string"
+  type = string
 }
