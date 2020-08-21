@@ -1,4 +1,4 @@
-cluster_domain = "centos.lab"
+cluster_domain = "cloud.lab"
 cluster_id= "os"
 
 matchbox_client_cert = "/etc/matchbox/tls/client.crt"
