@@ -7,9 +7,9 @@ matchbox_http_endpoint = "http://192.168.0.1:8080"
 matchbox_rpc_endpoint = "192.168.0.1:8081"
 matchbox_trusted_ca_cert = "/etc/matchbox/tls/ca.crt"
 
-pxe_initrd_url = "assets/rhcos-4.3.8-x86_64-installer-initramfs.x86_64.img"
-pxe_kernel_url = "assets/rhcos-4.3.8-x86_64-installer-kernel-x86_64"
-pxe_os_image_url = "http://192.168.0.1:8080/assets/rhcos-4.3.8-x86_64-metal.x86_64.raw.gz"
+pxe_initrd_url = "assets/rhcos-4.5.2-x86_64-installer-initramfs.x86_64.img"
+pxe_kernel_url = "assets/rhcos-4.5.2-x86_64-installer-kernel-x86_64"
+pxe_os_image_url = "http://192.168.0.1:8080/assets/rhcos-4.5.2-x86_64-metal.x86_64.raw.gz"
 
 worker_nodes = [
   {
@@ -20,7 +20,7 @@ worker_nodes = [
     worker_ipmi_user = "admin",
     worker_ipmi_pass = "password",
     worker_ipmi_port = "10100",
-    worker_ign_file = "/users/openlab/install-dir/worker.ign"
+    worker_ign_file = "/tmp/baremetal/worker.ign"
   },
   {
     name = "worker1",
@@ -30,7 +30,7 @@ worker_nodes = [
     worker_ipmi_user = "admin",
     worker_ipmi_pass = "password",
     worker_ipmi_port = "10101",
-    worker_ign_file = "/users/openlab/install-dir/worker.ign"
+    worker_ign_file = "/tmp/baremetal/worker.ign"
   },
   {
     name = "worker2",
@@ -40,7 +40,7 @@ worker_nodes = [
     worker_ipmi_user = "admin",
     worker_ipmi_pass = "password",
     worker_ipmi_port = "10102",
-    worker_ign_file = "/users/openlab/install-dir/worker.ign"
+    worker_ign_file = "/tmp/baremetal/worker.ign"
   },
 ]
 
